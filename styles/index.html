@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  id=  "form">
+        <div class="container">
+          <h1>Register</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+      
+          <input type="text" name="email" placeholder="email" id="email">
+      
+          <input type="password" name="password" placeholder="password" id="password">
+          <input type="submit" value="Register">
+          <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+      </form>
+      <script>
+    function localStorage() {
+    
+    const users = JSON.parse(localStorage.getItem('users')) || []
+    const formElement = document.getElementById('form')
+    const emailElement = document.getElementById('email')
+    const passwordElement = document.getElementById('password')
+
+  formElement.addEventListener('submit', function (event) {
+    event.preventDefault()
+    const emailValue = emailElement.value
+    const passwordValue = passwordElement.value
+    users.push({
+      fullname: emailValue,
+      password: passwordValue,
+    })
+    localStorage.setItem('users', JSON.stringify(users))
+  })
+}
+      
+
+      </script>
+</body>
+</html>

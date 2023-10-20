@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="page">
+        <div >
+            <h1>Title</h1>
+            <p>Content</p>
+        </div>
+    </div>
+    
+    
+    <script>
+const data = [
+{
+    title: 'Hello1',
+    content: 'Hi1',
+},
+{
+    title: 'Hello   ',
+    content: 'Hi2',
+},
+{   
+    title: 'Hello3',
+    content: 'Hi3',
+}
+]
+const pageElement = document.getElementById('page')
+pageElement.innerHTML = ''
+for (let i = 0; i < data.length; i++) {
+pageElement.innerHTML += `
+        <div>
+            <h1>${data[i].title}</h1>
+            <p>${data[i].content}</p>
+        </div>
+
+`
+}
+    </script>
+</body>
+</html>

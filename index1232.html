@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang Web Xem Phim</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách các bộ phim</h1>
+    <ul id="movie-list">
+        <!-- Các mục phim sẽ được thêm vào đây thông qua JavaScript -->
+    </ul>
+
+    <div id="player-container">
+        <video id="video-player" controls></video>
+    </div>
+
+    <script>
+        const movieList = document.getElementById('movie-list');
+        const videoPlayer = document.getElementById('video-player');
+
+        // Danh sách các phim
+        const movies = [
+            { title: 'Phim 1', src: 'https://www.youtube.com/watch?v=MaoRXusgIoU' },
+            { title: 'Phim 2', src: 'path/to/movie2.mp4' },
+            { title: 'Phim 3', src: 'path/to/movie3.mp4' }
+            // Thêm các phim khác vào đây
+        ];
+
+        // Hiển thị danh sách các phim
+        function displayMovies() {
+            movies.forEach(movie => {
+                const listItem = document.createElement('li');
+                listItem.innerText = movie.title;
+
+                listItem.addEventListener('click', () => {
+                    playMovie(movie.src);
+                });
+
+                movieList.appendChild(listItem);
+            });
+        }
+
+        // Phát phim
+        function playMovie(src) {
+            videoPlayer.src = src;
+            videoPlayer.play();
+        }
+
+        // Gọi hàm hiển thị danh sách phim để khởi tạo trang web
+        displayMovies();
+    </script>
+</body>
+</html>

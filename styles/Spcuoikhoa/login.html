@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.cdnfonts.com/css/e-eross" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/branchingmouse-becker" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Login -->
+    <div class="login">
+        <form id="login-form">
+
+            <h1>SIGN IN</h1>
+
+            <label for="userName">Email</label>
+            <input type="email" id="username" placeholder="Username" required>
+
+            <label for="userPw">Password</label>
+            <input type="password" id="password" placeholder="Password" required>
+
+            <div id="remember">
+                <input type="checkbox" value="lsRememberMe" id="rememberMe" style="display: inline-block;">
+                <label>Remember me</label>
+            </div>
+
+            <input id="login_btn" type="submit" value="Login" >
+            <a href="register.html" class="changemode">(*) Don't have an account</a>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>
